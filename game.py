@@ -254,7 +254,7 @@ while True: #每帧执行主体
         continue
     netprocess.eval()
     curenv = ScreenToImage(screen)
-    curaction =netprocess.choose_action(curenv)
+    curaction =netprocess.choose_action(curenv,not Play)
     if not OVER_FLAG and not Play:
      if reward>0:
          save(preenv,reward,preaction,curenv) #保存上一帧画面，奖励，当前帧画面

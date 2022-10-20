@@ -199,8 +199,8 @@ class DoubleDQN:
 class process:
     def train(self,final=False):
         self.DoubleDQN.learn(final)
-    def choose_action(self,curenv):
-        action=self.DoubleDQN.choose_action(curenv)
+    def choose_action(self,curenv,isTrain=True):
+        action=self.DoubleDQN.choose_action(curenv,isTrain)
         return action
     def save_transition(self,transition):
         self.DoubleDQN.save_transition(transition)
