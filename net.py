@@ -176,7 +176,7 @@ class DoubleDQN:
         if self.step%self.replace_target_iter==0:
             self.Q_target.load_state_dict(self.Q_eval.state_dict())
         if self.random_value<1:
-            self.random_value=base_random_value+self.random_increment*self.step
+            self.random_value=base_random_value+self.random_increment*self.step*0.1
 
     def choose_action(self,curenv,isTrain=True):
         curenv=torch.tensor(curenv).to(device)
