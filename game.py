@@ -286,9 +286,10 @@ over_surface = score_font.render(u"Game Over!", True, (0, 0, 255))
 screen.blit(background_surface, (0, 0))
 screen.blit(score_surface, (620, 10))
 screen.blit(over_surface, (250, 270))
-netprocess.train(final=True)
-netprocess.save_net()
-print("保存成功！")
+if not Play:
+ netprocess.train(final=True)
+ netprocess.save_net()
+ print("保存成功！")
 while True:
     pygame.display.update()
     for event in pygame.event.get():
